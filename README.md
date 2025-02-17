@@ -57,3 +57,16 @@ Finally, `exp` contains all the sampled LLM responses for the experiments in the
 2. If you wish to run the entire experiment---including LLM generation---you should go to the corresponding experiment folder, and do `run.py`.
 
 3. (To save some time) you can use the plotting bit in `run.py` and directly generate the plots in the paper from the calculated scores.
+
+# Cite
+
+```
+@inproceedings{
+rauba2025auditing,
+title={Auditing language models with distribution-based sensitivity analysis},
+author={Paulius Rauba and Qiyao Wei and Mihaela van der Schaar},
+booktitle={The 28th International Conference on Artificial Intelligence and Statistics},
+year={2025},
+url={https://openreview.net/forum?id=ilNQ2m4GTy}
+}
+```
