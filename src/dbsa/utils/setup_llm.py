@@ -49,7 +49,7 @@ def get_embeddings(texts):
             result.append(response.data[0].embedding)
     return np.array(result)
 
-def get_responses(prompt, model_id=None):
+def get_responses(prompt, n=20, model_id=None):
     """
     Get responses to the input prompt using Azure OpenAI API.
     Args:
@@ -63,7 +63,7 @@ def get_responses(prompt, model_id=None):
             model=llm_config["model_deployment_id"],
             max_tokens=256,
             temperature=1,
-            n=20,
+            n=n,
             messages=[
                 {"role": "user", "content": prompt}
             ]
