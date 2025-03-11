@@ -5,7 +5,7 @@
 # We demonstrate using the AzureOpenAI API
 # We also append an example of these two functions using open-source LLMs
 
-from dbpa.utils.openai_config import get_llm_config, get_embedding_config # You need to create this function
+from dbsa.utils.openai_config import get_llm_config, get_embedding_config # You need to create this function
 from openai import AzureOpenAI
 import numpy as np
 import transformers
@@ -49,7 +49,7 @@ def get_embeddings(texts):
             result.append(response.data[0].embedding)
     return np.array(result)
 
-def get_responses(prompt, n=20, model_id=None):
+def get_responses(prompt, model_id=None, n=20):
     """
     Get responses to the input prompt using Azure OpenAI API.
     Args:
@@ -58,7 +58,7 @@ def get_responses(prompt, n=20, model_id=None):
     Returns:
         List[str]: The response to the prompt.
     """
-    if model_id is None:
+    if model_id is None or "gpt" in model_id:
         response = llm_client.chat.completions.create(
             model=llm_config["model_deployment_id"],
             max_tokens=256,
