@@ -8,9 +8,9 @@ from tqdm import tqdm
 import pandas as pd
 import seaborn as sns
 
-from dbpa.utils.setup_llm import get_responses, get_embeddings
-from dbpa.data.generate_data import eval_prompt, tokenize_and_prepare_for_scoring
-from dbpa.model.core import compute_energy_distance_fn
+from dbsa.utils.setup_llm import get_responses, get_embeddings
+from dbsa.data.generate_data import eval_prompt, tokenize_and_prepare_for_scoring
+from dbsa.model.core import compute_energy_distance_fn
 
 # Main execution
 
